@@ -1,0 +1,24 @@
+<div *ngIf="contact.length > 0; else noDatos">
+<h1><small>Lista de </small><strong>Contactos</strong></h1>
+<ul class="list-group">
+  <li *ngFor="let c of contact" class="list-group-item" >
+    <div class="media">
+    <div class="media-left">
+      <img src="https://www.biosiglos.com/wp-content/uploads/2007/10/albert-einstein-1.jpg" class="media-object avatar" style="width:250px">
+    </div>
+    <div class="media-body">
+      <p><strong>{{ c.nombre }}</strong></p>
+      <p>{{ c.telefono }}</p>
+    </div>
+  </div>
+  </li>
+</ul>
+</div>
+
+<ng-template #noDatos>
+    <div class="alert alert-warning" role="alert">
+  <h4 class="alert-heading">Tu lista de contactos esta vacia!</h4>
+  <hr>
+  <p class="mb-0">Agrega tu primer contacto, siempre que agregues un contacto este aparecera en este espacio!</p>
+</div>
+  </ng-template>
